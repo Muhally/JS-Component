@@ -73,7 +73,7 @@ function showPerson(person){
 
 // Setting the starting item:
 
-let currentItem = 2
+let currentItem = 0
 
 
 // Load initial item:
@@ -82,6 +82,40 @@ window.addEventListener('DOMContentLoaded' , () => {
 
     showPerson(currentItem)
 })
+
+
+// Showing next person:
+
+nextBtn.addEventListener('click' , () => {
+
+  currentItem++
+
+  if (currentItem > reviews.length - 1){
+
+    currentItem = 0
+  }
+
+  showPerson(currentItem)
+
+})
+
+
+// Showing previous person:
+
+prevBtn.addEventListener('click' , () => {
+
+  currentItem--
+
+  if (currentItem < 0){
+
+    currentItem = reviews.length - 1
+  }
+
+  showPerson(currentItem)
+
+})
+
+
 
 
 
